@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export LD_LIBRARY_PATH=/lib64:/sysroot/lib64
+export PATH=$PATH:/sysroot/bin
+systemctl start sysroot.mount
+mount -o remount,rw /sysroot
+
+exec < /dev/tty
